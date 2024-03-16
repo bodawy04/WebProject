@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-.login {
+.register {
   background-color: #eee;
   position: absolute;
   right: 0;
@@ -28,6 +28,7 @@ body {
   padding: 0.5rem;
   border: 1px solid rgb(71, 71, 71);
   font-family: "Poppins", sans-serif !important;
+  margin-bottom: 1rem;
 }
 
 #checkbox {
@@ -50,7 +51,6 @@ body {
 
 a {
   text-decoration: none;
-  color: rgb(255, 42, 107);
 }
 
 a:visited {
@@ -66,15 +66,14 @@ a:visited {
 }
 
 button {
+  margin-top: 1rem;
   font-family: "Poppins", sans-serif !important;
-
   border: none;
   padding: 0.5rem;
   background-color: rgb(255, 42, 107);
   color: #eee;
   font-weight: 600;
 }
-
 button:hover {
   cursor: pointer;
 }

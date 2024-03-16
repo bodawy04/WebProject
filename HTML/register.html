@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,17 +13,24 @@
     />
   </head>
   <body>
-    <div class="login">
-      <h1>Recipe Finder</h1>
+    <div class="register">
+      <h1>Register</h1>
+      <label for="text">Username</label>
+      <input type="text" placeholder="Enter your name" id="textfield" />
       <label for="email">Email</label>
-      <input type="email" id="textfield" placeholder="Enter your email" />
+      <input type="email" placeholder="Enter your email" id="textfield" />
       <label for="password">Password</label>
-      <input type="password" id="textfield" placeholder="Enter your password" />
+      <input type="password" placeholder="Enter your password" id="textfield" />
+      <label for="password">Confirm Password</label>
+      <input
+        type="password"
+        placeholder="Confirm your password"
+        id="textfield"
+      />
       <div class="isAdmin">
         <input type="checkbox" id="checkbox" value="isAdmin" />Admin
       </div>
-      <h4>Don't have an account? <a href="register.html">Register</a></h4>
-      <button type="submit">Log in</button>
+      <button type="submit">Register</button>
     </div>
   </body>
 </html>
