@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="../css/admin_recipes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="recIntro">
+      <h2>Recipe</h2>
+    </div>
+    <div class="filters">
+      <div class="category">
+        <button class="categoryBtn">
+          Select Category
+          <img
+            src="../images/chevron-down-solid.svg"
+            id="downIcon"
+            alt=""
+            srcset=""
+          />
+        </button>
+        <div class="cat-content">
+          <h4>Pizza</h4>
+          <h4>Salad</h4>
+          <h4>Dessert</h4>
+          <h4>Side Dishes</h4>
+        </div>
+      </div>
+      <div class="ingredients">
+        <button class="ingredientsBtn">
+          Select ingredients
+          <img
+            src="../images/chevron-down-solid.svg"
+            id="downIcon"
+            alt=""
+            srcset=""
+          />
+        </button>
+        <div class="ing-content">
+          <h4>Eggs</h4>
+          <h4>Wheat</h4>
+          <h4>Oats</h4>
+          <h4>Milk</h4>
+          <h4>Cheese</h4>
+        </div>
+      </div>
+      <div class="search">
+        <input type="text" id="search" placeholder="Search Recipes" />
+      </div>
+      <button type="submit" id="searchBtn">Search</button>
+    </div>
+    <div class="latestTitle">
+      <div class="overline"></div>
+      <h2>All Recipes</h2>
+      <button class="addRcp">Add new recipe</button>
+    </div>
+    <div class="recipeGrid">
+      <div class="recipeTile">
+        <img src="../images/1.jpg.webp" alt="" srcset="" />
+        <div class="desc">Traditional Pizza</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/2.jpg.webp" alt="" srcset="" />
+        <div class="desc">Italian home-made pasta</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/3.jpg.webp" alt="" srcset="" />
+        <div class="desc">Chesse Cake Tart</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/1.jpg.webp" alt="" srcset="" />
+        <div class="desc">Traditional Pizza</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/2.jpg.webp" alt="" srcset="" />
+        <div class="desc">Italian home-made pasta</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/3.jpg.webp" alt="" srcset="" />
+        <div class="desc">Chesse Cake Tart</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/1.jpg.webp" alt="" srcset="" />
+        <div class="desc">Traditional Pizza</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/2.jpg.webp" alt="" srcset="" />
+        <div class="desc">Italian home-made pasta</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recipeTile">
+        <img src="../images/3.jpg.webp" alt="" srcset="" />
+        <div class="desc">Chesse Cake Tart</div>
+        <div class="settings">
+          <img
+            src="../images/ellipsis-vertical-solid.svg"
+            alt=""
+            srcset=""
+            class="settingsIcon"
+            style="width: 25px"
+          />
+          <div class="settings-content">
+            <h4 class="edit">Edit</h4>
+            <h4 class="delete">Delete</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="preFooter">
+      <img src="../images/5.jpg.webp" alt="" srcset="" />
+      <img src="../images/6.jpg.webp" alt="" srcset="" />
+      <img src="../images/7.webp" alt="" srcset="" />
+      <img src="../images/8.jpg" alt="" srcset="" />
+      <img src="../images/9.jpg" alt="" srcset="" />
+      <img src="../images/6.jpg.webp" alt="" srcset="" />
+    </div>
+  </body>
+</html>
