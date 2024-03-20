@@ -23,73 +23,41 @@ body {
 .filters {
   background-color: rgb(255, 42, 107);
   margin: 0 8rem;
-  margin-top: 80px;
-  padding: 40px;
+  margin-top: 5rem;
+  padding: 2rem;
+  gap: 1rem;
   display: flex;
-  /* gap: 20px; */
   flex-direction: row;
   justify-content: space-between;
 }
 
-#downIcon {
-  height: 10px;
-  width: 10px;
-}
-
-.categoryBtn,
-.ingredientsBtn {
-  background-color: #ffffff;
-  color: rgb(71, 71, 71);
-  padding: 16px 20px;
-  padding-right: 150px;
-  font-size: 16px;
+select {
+  flex: 3;
   border: none;
-  text-align: start;
-  cursor: pointer;
-  font-style: italic;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.category,
-.ingredients {
-  position: relative;
-  display: inline-block;
-}
-
-.cat-content,
-.ing-content {
-  display: none;
-  position: absolute;
+  display: inline;
   background-color: #ffffff;
-  z-index: 1;
+  color: #6d6d6d;
+  padding: 1rem;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 500;
+}
+select:focus {
+  border: none;
+  outline: none;
 }
 
-.cat-content h4,
-.ing-content h4 {
-  color: rgb(71, 71, 71);
-  padding: 0px 16px;
-}
-
-.cat-content h4:hover,
-.ing-content h4:hover {
-  background-color: #eee;
-  cursor: pointer;
-}
-
-.category:hover .cat-content,
-.ingredients:hover .ing-content {
-  display: block;
+option {
+  background-color: #ffffff;
 }
 
 #search {
+  padding: 1rem;
+  flex: 7;
   border: none;
   display: inline;
   background-color: #ffffff;
   color: rgb(71, 71, 71);
-  padding: 16px 18px;
-  padding-right: 200px;
   font-style: italic;
   font-size: 16px;
 }
@@ -99,16 +67,20 @@ body {
   outline: none;
   background-color: #ffffff;
   color: rgb(71, 71, 71);
-  padding: 20px;
   font-style: italic;
 }
 
 #searchBtn {
+  flex: 1;
   background-color: rgb(71, 71, 71);
   color: #ffffff;
   border: none;
-  padding: 0 40px;
+  padding: 0 2rem;
   font-size: 16px;
+}
+#searchBtn:hover {
+  cursor: pointer;
+  background-color: rgb(71, 71, 71, 0.8);
 }
 
 .overline {
@@ -120,13 +92,14 @@ body {
 }
 
 .latestTitle {
-  margin-top: 80px;
+  margin-top: 5rem;
   margin-left: 10rem;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .latestTitle h2 {
-  padding-top: 10px;
   font-weight: 700;
   font-size: 36px;
 }

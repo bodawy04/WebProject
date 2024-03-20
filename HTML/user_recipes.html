@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes</title>
-    <link rel="stylesheet" href="../css/user_recipes.css" />
+    <link rel="stylesheet" href="../css/admin_recipes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,45 +21,27 @@
       <h2>Recipe</h2>
     </div>
     <div class="filters">
-      <div class="category">
-        <button class="categoryBtn">
-          Select Category
-          <img
-            src="../images/chevron-down-solid.svg"
-            id="downIcon"
-            alt=""
-            srcset=""
-          />
-        </button>
-        <div class="cat-content">
-          <h4>Pizza</h4>
-          <h4>Salad</h4>
-          <h4>Dessert</h4>
-          <h4>Side Dishes</h4>
-        </div>
-      </div>
-      <div class="ingredients">
-        <button class="ingredientsBtn">
-          Select ingredients
-          <img
-            src="../images/chevron-down-solid.svg"
-            id="downIcon"
-            alt=""
-            srcset=""
-          />
-        </button>
-        <div class="ing-content">
-          <h4>Eggs</h4>
-          <h4>Wheat</h4>
-          <h4>Oats</h4>
-          <h4>Milk</h4>
-          <h4>Cheese</h4>
-        </div>
-      </div>
-      <div class="search">
-        <input type="text" id="search" placeholder="Search Recipes" />
-      </div>
-      <button type="submit" id="searchBtn">Search</button>
+      <select class="category" name="" id="">
+        <option value="">All Recipies Categories</option>
+        <option value="">Pizza</option>
+        <option value="">Salads</option>
+        <option value="">Desserts</option>
+        <option value="">Side Dishes</option>
+      </select>
+      <select class="ingredients" name="" id="">
+        <option value="">All Ingredients</option>
+        <option value="">Eggs</option>
+        <option value="">Wheat</option>
+        <option value="">Oats</option>
+        <option value="">Milk</option>
+        <option value="">Cheese</option>
+      </select>
+      <input
+        type="Search Receipies"
+        id="search"
+        placeholder="Search Receipies"
+      />
+      <button id="searchBtn">Search</button>
     </div>
     <div class="latestTitle">
       <div class="overline"></div>
@@ -94,6 +76,7 @@
         <img src="../images/1.jpg.webp" alt="" srcset="" />
         <div class="desc">Traditional Pizza</div>
       </div>
+
       <div class="recipeTile">
         <img src="../images/2.jpg.webp" alt="" srcset="" />
         <div class="desc">Italian home-made pasta</div>
