@@ -65,7 +65,7 @@
 }
 .contact-section{
     position: relative;
-    background-image: url(../img/contacts\ page\ background.webp);
+    background-image: url("../images/contacts\ page\ background.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -229,7 +229,8 @@ option{
 .statistics-container .icon{
     height: 80px;
     width: 80px;
-    color: #FF2A6B;
+    fill: #FF2A6B;
+    fill: #FF2A6B;
     
 }
 .number{
