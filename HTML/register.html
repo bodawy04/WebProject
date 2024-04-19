@@ -16,23 +16,77 @@
     <div class="register">
       <h1>Register</h1>
       <label for="text">Username</label>
-      <input type="text" placeholder="Enter your name" id="textfield" />
+      <input
+        type="text"
+        placeholder="Enter your name"
+        id="textfield"
+        class="username"
+      />
       <label for="email">Email</label>
-      <input type="email" placeholder="Enter your email" id="textfield" />
+      <input
+        type="email"
+        placeholder="Enter your email"
+        id="textfield"
+        class="password"
+      />
       <label for="password">Password</label>
-      <input type="password" placeholder="Enter your password" id="textfield" />
+      <input
+        type="password"
+        placeholder="Enter your password"
+        id="textfield"
+        class="pass"
+      />
       <label for="password">Confirm Password</label>
       <input
         type="password"
         placeholder="Confirm your password"
         id="textfield"
+        class="confPassword"
       />
       <div class="isAdmin">
         <input type="checkbox" id="checkbox" value="isAdmin" />Admin
       </div>
-      <form action="/html/homeUser.html">
-        <button type="submit">Register</button>
-      </form>
+      <button type="submit" onclick="sumbit()">Register</button>
     </div>
+    <script>
+      function sumbit() {
+        let password = document.querySelector(".pass").value;
+        let confPass = document.querySelector(".confPassword").value;
+        let checkbox = document.querySelector("#checkbox").checked;
+
+        console.log(checkbox);
+
+        if (
+          password.length > 1 &&
+          password.length < 8 &&
+          confPass.length > 1 &&
+          confPass.length < 8
+        ) {
+          alert("Password can't be less than 8 characters");
+        } else if (password == "") {
+          alert("Password can't be empty");
+        } else if (password !== confPass) {
+          alert("Passwords doesn't match");
+        } else if (
+          password === confPass &&
+          password != "" &&
+          password.length >= 8 &&
+          confPass.length >= 8
+        ) {
+          save(checkbox);
+          window.location.href = "/html/homeUser.html";
+        }
+      }
+
+      function save(c) {
+        let username = document.querySelector(".username").value;
+        window.localStorage.setItem("username", username);
+
+        if (c == true) window.localStorage.setItem("isAdmin", "true");
+        else if (c == false) {
+          window.localStorage.setItem("isAdmin", "false");
+        }
+      }
+    </script>
   </body>
 </html>
