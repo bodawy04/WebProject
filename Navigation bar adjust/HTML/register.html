@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="register">
+      <h1>Register</h1>
+      <label for="text">Username</label>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        id="textfield"
+        class="username"
+      />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        id="textfield"
+        class="password"
+      />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        placeholder="Enter your password"
+        id="textfield"
+        class="pass"
+      />
+      <label for="password">Confirm Password</label>
+      <input
+        type="password"
+        placeholder="Confirm your password"
+        id="textfield"
+        class="confPassword"
+      />
+      <div class="isAdmin">
+        <input type="checkbox" id="checkbox" value="isAdmin" />Admin
+      </div>
+      <button type="submit" onclick="sumbit()">Register</button>
+    </div>
+    <script>
+      function sumbit() {
+        let password = document.querySelector(".pass").value;
+        let confPass = document.querySelector(".confPassword").value;
+        let checkbox = document.querySelector("#checkbox").checked;
+
+        console.log(checkbox);
+
+        if (
+          password.length > 1 &&
+          password.length < 8 &&
+          confPass.length > 1 &&
+          confPass.length < 8
+        ) {
+          alert("Password can't be less than 8 characters");
+        } else if (password == "") {
+          alert("Password can't be empty");
+        } else if (password !== confPass) {
+          alert("Passwords doesn't match");
+        } else if (
+          password === confPass &&
+          password != "" &&
+          password.length >= 8 &&
+          confPass.length >= 8
+        ) {
+          save(checkbox);
+          window.location.href = "/html/homeUser.html";
+        }
+      }
+
+      function save(c) {
+        let username = document.querySelector(".username").value;
+        window.localStorage.setItem("username", username);
+
+        if (c == true) window.localStorage.setItem("isAdmin", "true");
+        else if (c == false) {
+          window.localStorage.setItem("isAdmin", "false");
+        }
+      }
+    </script>
+  </body>
+  <script src="../JS/main.js"></script>
+</html>
