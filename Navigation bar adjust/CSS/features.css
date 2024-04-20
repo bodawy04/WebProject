@@ -1,6 +1,7 @@
 *{
     margin: 0;
 }
+
 .navbar {
   font-family: "Dosis", sans-serif;
   font-weight: 600;
@@ -108,10 +109,10 @@
 .dropdown-button{
     background:#fff;
     min-width: 250px;
-    color: #6d6d6d;
+   color: #6d6d6d;
     float: left;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 300;
     font-style: italic;
     font-family: 'Poppins', sans-serif;
     padding: 0px 25px;
@@ -245,12 +246,13 @@ option{
 }
 .subscribtion-text p{
     font-size: 14px;
-    font-weight: 50;
+    font-weight: 300;
     font-style: italic;
-    color: #6d6d6d;
+    color: #000000;
     font-family: 'Poppins', sans-serif;
     line-height: 2.5;
-    opacity: 0.8;
+    opacity: 0.4;
+  
 }
 .img-container{
     flex: 1;
@@ -270,6 +272,9 @@ option{
     outline: none;
     padding: 20px 20px;
     width: 350px;
+}
+.subscribe-desc{
+    color: ;
 }
 .preFooter {
     width: 100%;
