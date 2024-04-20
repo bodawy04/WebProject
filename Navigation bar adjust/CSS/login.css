@@ -1,0 +1,80 @@
+body {
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+  color: rgb(71, 71, 71);
+  background-image: url("../images/ryan-concepcion-50KffXbjIOg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  z-index: 0;
+  margin: 0;
+}
+
+.login {
+  background-color: #eee;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 6rem;
+  padding-right: 15rem;
+  justify-content: center;
+}
+
+#textfield {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(71, 71, 71);
+  font-family: "Poppins", sans-serif !important;
+}
+
+#checkbox {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.3rem;
+  border: 2px solid rgb(71, 71, 71);
+  cursor: pointer;
+  text-align: center;
+}
+
+#checkbox:checked {
+  background-color: rgb(71, 71, 71);
+  border-color: rgb(71, 71, 71);
+}
+#checkbox:checked:after {
+  content: "✔";
+  color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 42, 107);
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(255, 42, 107);
+}
+
+.isAdmin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+button {
+  font-family: "Poppins", sans-serif !important;
+
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 42, 107);
+  color: #eee;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
