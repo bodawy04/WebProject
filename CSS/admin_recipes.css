@@ -137,18 +137,17 @@ body {
 }
 
 select {
-  flex: 3;
   border: none;
   display: inline;
   background-color: #ffffff;
   color: #6d6d6d;
-  padding: 1rem;
+  padding: 0.3rem;
   font-style: italic;
   font-size: 16px;
   font-weight: 500;
 }
 select:focus {
-  border: none;
+  border: solid 1px black;
   outline: none;
 }
 
@@ -286,6 +285,7 @@ textarea {
 }
 .rightSide {
   position: relative;
+  padding-top: 200px;
 }
 
 .edit {
@@ -317,11 +317,14 @@ textarea {
 }
 
 .cancelBtn:hover,
-.addRcpbtn:hover {
+.cancelBtn2:hover,
+.addRcpbtn:hover,
+.editRcpbtn:hover {
   cursor: pointer;
 }
 
-.custAlert {
+.custAlert,
+.custAlert2 {
   display: none;
   position: fixed;
   padding: 20px;

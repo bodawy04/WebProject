@@ -25,20 +25,27 @@ cancelBtn.addEventListener("click", function () {
 //for adding in local stoarge
 let rcpNameField = document.querySelector("#rcpName");
 let rcpDescField = document.querySelector("#rcpDesc");
+let rcpID = document.querySelector("#rcpID");
+let rcpPlate = document.querySelector("#rcpPlate");
 
 addRcpBtn.addEventListener("click", function () {
-  console.log(rcpNameField.value);
-  console.log(rcpDescField.value);
   let oldData = JSON.parse(localStorage.getItem("rcpData"));
-  oldData.push([rcpNameField.value, rcpDescField.value]);
+  oldData.push([
+    rcpID.value,
+    rcpNameField.value,
+    rcpPlate.value,
+    rcpDescField.value,
+  ]);
+
   localStorage.setItem("rcpData", JSON.stringify(oldData));
+
   location.reload();
 });
 
 //for saving items
 
-let oldData = JSON.parse(localStorage.getItem("rcpData"));
-oldData.push([rcpNameField.value, rcpDescField.value]);
+// let oldData = JSON.parse(localStorage.getItem("rcpData"));
+// oldData.push([rcpNameField.value, rcpDescField.value]);
 
 function addNewRecipe(r) {
   let recipeTile = document.createElement("div");
@@ -50,7 +57,7 @@ function addNewRecipe(r) {
 
   let recipeName = document.createElement("div");
   recipeName.setAttribute("class", "desc");
-  recipeName.innerHTML = r[0];
+  recipeName.innerHTML = r[1];
   recipeTile.appendChild(recipeName);
 
   let recipeSettings = document.createElement("div");
@@ -88,4 +95,75 @@ if (dataList != null && dataList.length > 0) {
   for (let i = 0; i < dataList.length; i++) {
     addNewRecipe(dataList[i]);
   }
+}
+
+let customedAlert2 = document.querySelector(".custAlert2");
+let editRcpBtn = document.querySelectorAll(".settings-content .edit");
+let editAlertBtn = document.querySelector(".edit .editRcpbtn");
+let deleteRcpBtn = document.querySelectorAll(".settings-content .delete");
+let cancelBtn2 = document.querySelector(".cancelBtn2");
+let editRcpFlag = false;
+
+editRcpBtn.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    // Display recipe details here
+    displayRecipeDetails(dataList[index], index);
+    // Show the edit form
+    body.style.opacity = "0.2";
+    customedAlert2.style.display = "block";
+    customedAlert2.style.opacity = "1";
+    editRcpFlag = true;
+  });
+});
+
+deleteRcpBtn.forEach((button, index) => {
+  button.addEventListener("click", function () {
+    let oldData = JSON.parse(localStorage.getItem("rcpData"));
+
+    oldData.splice(index, 1);
+
+    localStorage.setItem("rcpData", JSON.stringify(oldData));
+    location.reload();
+  });
+});
+
+// editRcpBtn.addEventListener("click", function () {
+//   body.style.opacity = "0.2";
+//   customedAlert2.style.display = "block";
+//   customedAlert2.style.opacity = "1";
+//   editRcpFlag = true;
+// });
+cancelBtn2.addEventListener("click", function () {
+  body.style.opacity = "1";
+  customedAlert2.style.display = "none";
+  editRcpFlag = false;
+});
+
+function displayRecipeDetails(recipe, i) {
+  let editRcpName = document.querySelector("#editRcpName");
+  let editRcpID = document.querySelector("#editRcpID");
+  let editRcpPlate = document.querySelector("#editRcpPlate");
+  let editRcpDesc = document.querySelector("#editRcpDesc");
+
+  editRcpName.value = recipe[1];
+  editRcpID.value = recipe[0];
+  editRcpPlate.value = recipe[2];
+  editRcpDesc.value = recipe[3];
+
+  editAlertBtn.addEventListener("click", function () {
+    let oldData = JSON.parse(localStorage.getItem("rcpData"));
+
+    oldData.splice(i, 1);
+
+    oldData.push([
+      editRcpID.value,
+      editRcpName.value,
+      editRcpPlate.value,
+      editRcpDesc.value,
+    ]);
+    // console.log(tmp);
+
+    localStorage.setItem("rcpData", JSON.stringify(oldData));
+    location.reload();
+  });
 }
