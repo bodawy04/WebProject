@@ -4,6 +4,7 @@ body {
   color: rgb(71, 71, 71);
   margin: 0;
 }
+
 .navbar {
   font-family: "Dosis", sans-serif;
   font-weight: 600;
@@ -219,6 +220,116 @@ option {
 .addRcp:hover {
   cursor: pointer;
   background: rgb(255, 42, 107, 0.7);
+}
+
+section {
+  gap: 2rem;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.leftSide {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.settings {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.settingsIcon {
+  height: 25px;
+  padding: 5px 5px;
+  border-radius: 50px;
+  z-index: 100;
+  background-color: white;
+}
+
+.settings-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.settings-content {
+  border-radius: 20px;
+}
+
+.settings-content h4 {
+  color: rgb(71, 71, 71);
+  padding: 0px 16px;
+}
+
+.settings-content h4:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.settings:hover .settings-content {
+  display: block;
+}
+
+textarea {
+  font-family: "Poppins", sans-serif;
+  color: rgb(71, 71, 71);
+  resize: none;
+}
+
+.rightSide img {
+  border-radius: 10px;
+}
+.rightSide {
+  position: relative;
+}
+
+.edit {
+  margin: 2rem 0 4rem;
+  gap: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.edit button {
+  border-radius: 10px;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.edit button:nth-child(1) {
+  background-color: #ffffff;
+  border: solid 1px black;
+}
+
+.edit button:nth-child(2) {
+  border: solid 0.5px black;
+  background-color: rgb(255, 42, 107);
+}
+
+.edit button {
+  padding: 1rem;
+  border: none;
+}
+
+.cancelBtn:hover,
+.addRcpbtn:hover {
+  cursor: pointer;
+}
+
+.custAlert {
+  display: none;
+  position: fixed;
+  padding: 20px;
+  top: 10%;
+  left: 20%;
+  z-index: 100;
+  background-color: rgb(255, 42, 107, 0.7);
+  border-radius: 20px;
 }
 
 .latestTitle h2 {

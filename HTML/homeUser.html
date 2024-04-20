@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,8 +37,8 @@
           <i class="fi fi-brands-youtube"></i>
           <i class="fi fi-brands-twitter"></i>
         </div>
-        <div class="login-reg">
-          <p>Login / Register</p>
+        <div class="displayName">
+          <p></p>
           <img src="../images/login-icon.png" alt="" />
         </div>
       </nav>
@@ -42,13 +46,23 @@
         <div class="logo-navbar">LOGO</div>
         <div class="links-navbar">
           <a class="navbar-link" href="homeUser.html">Home</a>
-          <a class="navbar-link" href="features.html">Features</a>
-          <a class="navbar-link" href="user_recipes.html">Receipies</a>
-          <a class="navbar-link" href="">Reviews</a>
-          <a class="navbar-link" href="Contact page.html">Contact</a>
-        </div>
-        <div class="searchbox-navbar">
-          <img class="search-icon" src="../images/search-icon.png" alt="" />
+          <a class="navbar-link">Features</a>
+          <a class="navbar-link rcpLink">Receipies</a>
+          <div class="fav">
+            <a class="navbar-link" href="">Favorites</a>
+            <ul>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+            </ul>
+          </div>
+          <a class="navbar-link" href="">Contact</a>
         </div>
       </nav>
     </nav>
@@ -142,6 +156,32 @@
         <h3>Feta Cheese Burgers</h3>
       </div>
     </section>
+    <script>
+      let username = document.querySelector(".displayName p");
+      username.innerHTML = localStorage.getItem("username");
+
+      let logout = document.querySelector(".displayName img");
+      logout.addEventListener("click", () => {
+        localStorage.removeItem("username");
+        localStorage.removeItem("isAdmin");
+        location.href = "/html/index.html";
+      });
+
+      let favList = document.querySelector(".fav");
+      let rcpLink = document.querySelector(".rcpLink");
+      if (localStorage.getItem("isAdmin") == "true") {
+        favList.style.display = "none";
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "/html/admin_recipes.html")
+        );
+      } else if (localStorage.getItem("isAdmin") == "false") {
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "/html/user_recipes.html")
+        );
+      }
+    </script>
   </body>
   <script src="../JS/main.js"></script>
 </html>
