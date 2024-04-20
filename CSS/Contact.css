@@ -65,7 +65,7 @@
 }
 .contact-section{
     position: relative;
-    background-image: url("../images/contacts\ page\ background.webp");
+    background-image: url(../img/pexels-taryn-elliott-4099235.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +73,7 @@
     width: 100%;
     height: 220px;
 }
-.Contact-titel{
+.Contact-title{
     position: relative;
     top: 50;
     font-family: "Poppins", sans-serif;
@@ -85,45 +85,6 @@
     padding: 0px 30px;
     border-radius: 5px;
     background: rgb(255,42,107);
-    
-}
-.searches-container-in-contact{
-    display: flex;
-    border: 2px solid rgb(255,42,107);
-    border-radius: 10px;
-    margin: 80px 144px 0 144px;
-    padding: 44px 44px;
-    background-color: rgb(255,42,107);
-}
-.searches-container-in-contact select{
-    background: #fff;
-    color: #6d6d6d;
-    height: 59px;
-    padding: 0 25px;
-    font-size: 14px;
-    margin-right: 17px;
-    width: calc(23.9% - 17px);
-    border: none;
-    border-radius: 10px;
-}
-.searches-container-in-contact input{
-    height: 59px;
-    float: left;
-    padding: 0 25px;
-    margin-right: 17px;
-    width: calc(40.6% - 17px);
-    font-size: 14px;
-    border: none;
-    border-radius: 10px;
-}
-.searches-container-in-contact button{
-    border: none;
-    border-radius: 10px;
-    height: 59px;
-    font-size: 14px;
-    color: #fff;
-    min-width: 132px;
-    background: #474747;
 }
 .leave-a-comment-section{
     display: flex;
@@ -160,6 +121,7 @@
     font-size: 14px;
     padding: 10px 50px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 .contact-form-input{
     width: 100%;
@@ -170,9 +132,9 @@
     font-size: 14px;
     padding: 10px 50px;
     margin-bottom: 25px;
+    cursor: pointer;
 }
 .contact-form-input-button{
-    
     min-width: 178px;
     text-align: center;
     border: none;
@@ -212,16 +174,42 @@
 .li-icons{
     margin-right: 25px;
 }
+.li-icons:hover{
+    color: rgb(255, 42, 107);
+    cursor: pointer;
+}
 .photos-container{
-    margin-top: 100px;
-    height: 250px;
+    /* margin-block: 50px; */
+    border: 2px solid white;
+    border-radius: 30px;
     display: flex;
+    overflow: auto;
+    overflow-x: scroll;
+}
+.photos-container::-webkit-scrollbar{
+    display: none;
+}
+.photos-container div{
+    width: 100%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto ;
+    gap: 20px;
+    padding: 10px;
 }
 .photos-inside-container{
-    width: calc(100%/6);
+    max-height: 300px;
+    min-width: 300px;
+    filter:opacity(90%);
+    transition: transform 0.5s;
+}
+.photos-inside-container:hover{
+    cursor: pointer;
+    filter: opacity(100%);
+    transform: scale(1.1);
 }
 .footer-container{
-    height: 90px;
+    height: 50px;
     background-image: url(../img/footer-bg.jpg.webp);
     background-position: center;
     background-size: cover;
@@ -231,13 +219,18 @@
 .footer-logo-and-socialmedia-container{
     width: 50%;
     margin-left: 50;
+    margin-bottom: 30px;
 }
 .footer-socialmedia-icons-container{
     margin-top: 25px;
+    margin-left: 3px;
 }
 .footer-icons{
     margin-right: 40px;
-    
+}
+.footer-icons:hover{
+    color: rgb(255, 42, 107);
+    cursor: pointer;
 }
 .footer-links-container ul{
     display: flex;
@@ -251,14 +244,8 @@
 }
 .footer-links-container li:hover{
     color: rgb(255,42,107);
+    cursor: pointer;
 }
 .footer-links-and-copyrights-container{
     margin-left: 70px;
-}
-.footer-copyrights p{
-    opacity: 0.7;
-    font-size: 15px;
-}
-.footer-copyrights span{
-    color: rgb(255,42,107);
 }
