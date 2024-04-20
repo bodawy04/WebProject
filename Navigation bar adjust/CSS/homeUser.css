@@ -1,10 +1,10 @@
 * {
   margin: 0;
-  box-sizing: border-box;
   text-decoration: none;
 }
+
 .navbar {
-  font-family: "dosis";
+  font-family: "Dosis", sans-serif;
   font-weight: 600;
   font-size: 15px;
   position: sticky;
@@ -12,13 +12,14 @@
 .nav1 {
   height: 40px;
   display: flex;
+  font-family: "Dosis", sans-serif;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 180px;
+  padding: 10px 180px;
   color: #fff;
   background-color: rgb(255, 42, 107);
 }
-.displayName img {
+.login-reg img {
   width: 20px;
   height: 23px;
   margin-left: 10px;
@@ -30,11 +31,9 @@
   display: flex;
   gap: 20px;
 }
-.displayName {
+.login-reg {
   display: flex;
-}
-.displayName img:hover {
-  cursor: pointer;
+  align-items: center;
 }
 .nav2 {
   display: flex;
@@ -44,10 +43,12 @@
   font-weight: 600;
   font-size: 30px;
   height: 80px;
-  background-color: bisque;
+
+  background-color: #ffffff;
 }
 .links-navbar {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   gap: 90px;
   font-size: 15px;
@@ -56,14 +57,15 @@
   width: 20px;
 }
 .navbar-link {
-  color: #000;
+  text-decoration: none;
+  font-family: "Dosis", sans-serif;
+  color: rgb(71, 71, 71);
   transition: ease-in-out 300ms;
 }
 .navbar-link:hover {
   cursor: pointer;
   color: rgb(255, 42, 107);
 }
-
 .fav {
   position: relative;
 }

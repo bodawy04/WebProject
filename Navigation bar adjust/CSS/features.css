@@ -1,88 +1,66 @@
 *{
     margin: 0;
 }
+.navbar {
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  position: sticky;
+}
+.nav1 {
+  height: 40px;
+  display: flex;
+  font-family: "Dosis", sans-serif;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 180px;
+  color: #fff;
+  background-color: rgb(255, 42, 107);
+}
+.login-reg img {
+  width: 20px;
+  height: 23px;
+  margin-left: 10px;
+  /* height: auto; */
+  /* aspect-ratio: 1/1; */
+  object-fit: contain;
+}
+.social-media-icons-nav {
+  display: flex;
+  gap: 20px;
+}
+.login-reg {
+  display: flex;
+  align-items: center;
+}
+.nav2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 180px;
+  font-weight: 600;
+  font-size: 30px;
+  height: 80px;
 
-.navbar-upper-container{
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    background: #FF2A6B;
-    align-items: center;
-    position: relative;
+  background-color: #ffffff;
 }
-
-.social-media-icons-container{
-    display: flex;
-    gap: 30px;
-    position: absolute;
-    left: 100px;
+.links-navbar {
+  display: flex;
+  justify-content: space-around;
+  gap: 90px;
+  font-size: 15px;
 }
-.icon{
-    width: 20px;
-    height: 20px;
-    filter: invert(100%);
+.nav2 img {
+  width: 20px;
 }
-.register-login-container{
-    position: absolute;
-    right: 100px;
+.navbar-link {
+  text-decoration: none;
+  font-family: "Dosis", sans-serif;
+  color: rgb(71, 71, 71);
+  transition: ease-in-out 300ms;
 }
-.register-login-container span{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;  
-}
-.register-login{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-}
-.navbar-lower-container{
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    height: 100px;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-inline: 100px;
-}
-.logo-container{
-    padding: 0;
-}
-.LOGO{
-    font-weight: 800;
-    font-size: 30px;
-    letter-spacing: 2px;
-}
-.navbar-links-container{
-    display: flex;
-    gap: 40px;
-    height: 100%;
-    align-items: center;
-    font-weight: 400;
-    font-size: 16px;
-}
-.navbar-link{
-    font-family: "Spline Sans Mono", monospace;
-    text-decoration: none;
-    color: #000000;
-    transition: ease-in-out 0.2s;
-}
-.navbar-link:hover{
-    color: #FF2A6B;
-    transform: scale(1.2);
-}
-.navbar-search-icon-container{
-    background: #FF2A6B;
-    padding: 2px;
-    display: flex;
-    align-items: center;
-    border-radius: 3px;
-}
-.navbar-search-icon{
-    width: 25px;
-    height: 25px;
-    filter: invert(100%);
+.navbar-link:hover {
+  color: rgb(255, 42, 107);
 }
 .under-navbar-container{
     min-height: 220px;

@@ -66,6 +66,7 @@ body {
 .navbar-link:hover {
   color: rgb(255, 42, 107);
 }
+
 .recIntro {
   background-image: url("../images/page-top-bg.jpg.webp") !important;
   text-align: center;
