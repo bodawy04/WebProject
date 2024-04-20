@@ -29,11 +29,14 @@ function handleIntersection(entries, observer) {
         console.log("Element is visible");
         
         let myNumber = document.getElementsByClassName("number")
+        // saving the actual numbers in temp and reset myNumber
         let temp = []
+
         for(i = 0; i < myNumber.length; i++){
             temp.push(myNumber[i].innerHTML)
             myNumber[i].innerHTML = 0;
         }
+        // count up from 0 till reaching the actual number 
         for(i = 0; i < myNumber.length; i++){
             function countUp(currNumber,tempr){
                 currNumber.innerHTML = parseInt(currNumber.innerHTML)+1
@@ -57,9 +60,9 @@ const targetElement = document.getElementById('your-target-element-id');
 
 // Options for the Intersection Observer
 const options = {
-  root: null, // Use the viewport as the root
-  rootMargin: '0px', // No margin around the viewport
-  threshold: 1.0 // Trigger when fully visible
+  root: null,
+  rootMargin: '0px', 
+  threshold: 1.0 
 };
 
 // Create a new Intersection Observer
@@ -67,3 +70,17 @@ const observer = new IntersectionObserver(handleIntersection, options);
 
 // Start observing the target element
 observer.observe(targetElement);
+
+// newsletter subscribing email saved in local storage
+let emailInput = document.getElementById("emailInput")
+let subscribButton = document.getElementById("Subscribe-button")
+
+subscribButton.addEventListener("click",()=>{
+    const email = emailInput.value
+    if(email.trim() !== ''){
+        localStorage.setItem('subscribtion email',email)
+        alert("Thanks for subscribing!")
+    }else{
+        alert("please enter your email")
+    }
+})
