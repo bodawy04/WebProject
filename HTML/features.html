@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features</title>
     <link rel="stylesheet" href="../CSS/features.css">
+    <link rel="stylesheet" href="../CSS/shared.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cagliostro&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Kalnia:wght@100..700&family=Micro+5&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -13,6 +14,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cagliostro&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Kalnia:wght@100..700&family=Micro+5&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="top-page-button" id="scroll-up" onclick="scrollUp()">
+        <img src="../images/arrow.png" alt="">
+    </div>
     <nav class="navbar">
         <div class="navbar-upper-container">            
             <div class="social-media-icons-container">
@@ -83,42 +87,43 @@
         </div>
     </section>
 
-    <section class="statistics-container">
+    <section class="statistics-container" >
         <div class="stat">
-            <img src="../images/macaroni.png.webp" alt="" class="icon">
-            <h2 class="number">1287</h2>
+            <img src="../images/macaroni.png.webp" alt="" class="icon" id="your-target-element-id">
+            <h2 class="number">921</h2>
             <h4 class="small-text">Amazing Receipies</h4>
         </div>
         <div class="stat">
-            <img src="../images/bottle.png.webp" alt="" class="icon">
-            <h2 class="number">25</h2>
+            <img src="../images/bottle.png.webp" alt="" class="icon" id="your-target-element-id">
+            <h2 class="number">75</h2>
             <h4 class="small-text">Soft drinks</h4>
         </div>
         <div class="stat">
-            <img src="../images/meat.png.webp" alt="" class="icon">
+            <img src="../images/meat.png.webp" alt="" class="icon" id="your-target-element-id">
             <h2 class="number">471</h2>
             <h4 class="small-text">Meat Receipies</h4>
         </div>
         <div class="stat">
-            <img src="../images/cake.png.webp" alt="" class="icon">
+            <img src="../images/cake.png.webp" alt="" class="icon" id="your-target-element-id">
             <h2 class="number">326</h2>
             <h4 class="small-text">Desert Receipies</h4>
         </div>
     </section>
+
     <section class="subscribtion-container">
-            <div class="subscribtion-text">
-                <h1>Subscribe to our newsletter</h1>
-                <div class="subscrib-input-button">
-                    <input type="" placeholder="Your E-mail">
-                    <button class="Subscribe common-button">Subscribe</button>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
-                      Aenean congue sed metus in <br>iaculis. Cras a tortor enim.</p>
+        <div class="subscribtion-text">
+            <h1>Subscribe to our newsletter</h1>
+            <div class="subscrib-input-button">
+                <input type="" placeholder="Your E-mail">
+                <button class="Subscribe common-button">Subscribe</button>
             </div>
-            <div class="img-container">
-                
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque tortor.
+                  Aenean congue sed metus in <br>iaculis. Cras a tortor enim.</p>
+        </div>
+        <div class="img-container">
+            
+        </div>
     </section>
 
     <div class="preFooter">
@@ -129,5 +134,6 @@
         <img src="../images/9.jpg" alt="" srcset="" />
         <img src="../images/6.jpg.webp" alt="" srcset="" />
       </div>
+      <script src="../JS/main.js"></script>
 </body>
 </html>

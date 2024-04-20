@@ -219,6 +219,7 @@ option{
     background: #EFF3F7;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 140px;
 }
 .stat{
     display: flex;
@@ -231,7 +232,6 @@ option{
     width: 80px;
     fill: #FF2A6B;
     fill: #FF2A6B;
-    
 }
 .number{
     font-size: 48px;
@@ -303,3 +303,4 @@ option{
     width: 0.1666666666666667%;
     flex: 1;
 }
+
