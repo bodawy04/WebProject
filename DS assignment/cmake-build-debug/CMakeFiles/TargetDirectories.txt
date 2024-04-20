@@ -1,3 +1,0 @@
-C:/Users/Yousof/CLionProjects/DS assignment/cmake-build-debug/CMakeFiles/DS_assignment.dir
-C:/Users/Yousof/CLionProjects/DS assignment/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Yousof/CLionProjects/DS assignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir

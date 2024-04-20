@@ -1,8 +1,0 @@
-Algorithm: Selection Sort
-Number of Comparisons: 0
-Running Time (ms): 0
-Sorted Students:
-ID: 0, Name: , GPA: 0
-ID: 0, Name: , GPA: 0
-ID: 0, Name: , GPA: 0
-ID: 0, Name: , GPA: 0
