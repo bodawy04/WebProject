@@ -288,6 +288,7 @@ header {
   background-color: rgb(253, 201, 87);
   align-items: center;
   font-family: "dosis";
+  margin-bottom: 20px;
 }
 
 .sec3 .card {
