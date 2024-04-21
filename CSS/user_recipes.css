@@ -4,6 +4,117 @@ body {
   color: rgb(71, 71, 71);
   margin: 0;
 }
+.navbar {
+  font-family: "dosis";
+  font-weight: 600;
+  font-size: 15px;
+  position: sticky;
+}
+.nav1 {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 180px;
+  color: #fff;
+  background-color: rgb(255, 42, 107);
+}
+.displayName img {
+  width: 20px;
+  height: 23px;
+  margin-left: 10px;
+  /* height: auto; */
+  /* aspect-ratio: 1/1; */
+  object-fit: contain;
+}
+.social-media-icons-nav {
+  display: flex;
+  gap: 20px;
+}
+.displayName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayName img:hover {
+  cursor: pointer;
+}
+.nav2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 180px;
+  font-weight: 600;
+  font-size: 30px;
+  height: 80px;
+  background-color: white;
+}
+.links-navbar {
+  display: flex;
+  justify-content: space-around;
+  gap: 90px;
+  font-size: 15px;
+}
+.nav2 img {
+  width: 20px;
+}
+.navbar-link {
+  color: #000;
+  text-decoration: none;
+  transition: ease-in-out 300ms;
+}
+.navbar-link:hover {
+  cursor: pointer;
+  color: rgb(255, 42, 107);
+}
+.navbar-link:visited {
+  text-decoration: none;
+}
+
+.fav {
+  position: relative;
+}
+.fav:hover ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  padding: 10px 10px;
+  gap: 10px;
+  position: absolute;
+}
+.fav ul {
+  display: none;
+}
+/* .fav ul:hover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  padding: 10px 10px;
+  gap: 10px;
+} */
+.fav ul li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.fa-trash-o {
+  padding: 4px;
+  background-color: white;
+  color: red;
+  border: solid red 1px;
+  border-radius: 5px;
+  transition-duration: 500ms;
+}
+.fa-trash-o:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: solid red 1px;
+}
 
 .recIntro {
   background-image: url("../images/page-top-bg.jpg.webp") !important;
@@ -29,26 +140,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-select {
-  flex: 3;
-  border: none;
-  display: inline;
-  background-color: #ffffff;
-  color: #6d6d6d;
-  padding: 1rem;
-  font-style: italic;
-  font-size: 16px;
-  font-weight: 500;
-}
-select:focus {
-  border: none;
-  outline: none;
-}
-
-option {
-  background-color: #ffffff;
 }
 
 #search {
@@ -117,6 +208,7 @@ option {
 }
 .recipeTile img {
   width: 392px;
+  height: 300px;
 }
 
 .desc {
@@ -134,11 +226,74 @@ option {
   font-size: 15px;
 }
 
-.preFooter {
-  margin-top: 100px;
+.photos-container {
+  /* margin-block: 50px; */
+  border: 2px solid white;
+  border-radius: 30px;
   display: flex;
-  flex-direction: row;
+  overflow: auto;
+  overflow-x: scroll;
 }
-.preFooter img {
-  height: 253.2px;
+.photos-container::-webkit-scrollbar {
+  display: none;
+}
+.photos-container div {
+  width: 100%;
+  height: 250px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  gap: 20px;
+  padding: 10px;
+}
+.photos-inside-container {
+  max-height: 300px;
+  min-width: 300px;
+  filter: opacity(90%);
+  transition: transform 0.5s;
+}
+.photos-inside-container:hover {
+  cursor: pointer;
+  filter: opacity(100%);
+  transform: scale(1.1);
+}
+.footer-container {
+  height: 50px;
+  background-image: url(../images/footer-bg.jpg.webp);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  padding: 100px 70px;
+}
+.footer-logo-and-socialmedia-container {
+  width: 50%;
+  margin-left: 50;
+  margin-bottom: 30px;
+}
+.footer-socialmedia-icons-container {
+  margin-top: 25px;
+  margin-left: 3px;
+}
+.footer-icons {
+  margin-right: 40px;
+}
+.footer-icons:hover {
+  color: rgb(255, 42, 107);
+  cursor: pointer;
+}
+.footer-links-container ul {
+  display: flex;
+  list-style-type: none;
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+.footer-links-container li {
+  margin-left: 40px;
+  font-weight: 500;
+}
+.footer-links-container li:hover {
+  color: rgb(255, 42, 107);
+  cursor: pointer;
+}
+.footer-links-and-copyrights-container {
+  margin-left: 70px;
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/recipe.css">
+    <link rel="stylesheet" href="../css/recipe.css" />
     <!-- <style>
         *{
             margin: 0;
@@ -55,37 +55,37 @@
             right: 0;
         }
     </style> -->
-</head>
-<body>
-    <button class="GoBack" onclick="goToHomePage()">
-        Go to the home page
-    </button>
+  </head>
+  <body>
+    <button class="GoBack" onclick="goBack()">Go Back</button>
     <div class="recipe-container">
-        <img src="" alt="" class="recipe-img">
-        <h2 class="title"></h2>
-        <p class="desc"></p>
+      <img src="" alt="" class="recipe-img" />
+      <h2 class="title"></h2>
+      <p class="desc"></p>
     </div>
     <script>
-        function goToHomePage() {
-            document.location.href = "homeUser.html"
+      function goBack() {
+        if (localStorage.getItem("isAdmin") == "false")
+          document.location.href = "user_recipes.html";
+        else if (localStorage.getItem("isAdmin") == "true")
+          document.location.href = "adminrecipes.html";
+      }
+      let recipe_container = document.querySelector(".recipe-container");
+      let title = localStorage.getItem("recipeTitle");
+      let arrRecipes = JSON.parse(localStorage.getItem("rcpData"));
+      let recipe;
+      for (let i = 0; i < arrRecipes.length; i++) {
+        if (arrRecipes[i][1] == title) {
+          console.log(arrRecipes[i][1], title);
+          recipe = arrRecipes[i];
+          break;
         }
-        let recipe_container = document.querySelector(".recipe-container");
-        let title = localStorage.getItem("recipeTitle")
-        let arrRecipes = JSON.parse(localStorage.getItem("rcpData"));
-        let recipe;
-        for(let i = 0; i < arrRecipes.length; i++){
-            if(arrRecipes[i][1] == title){
-                console.log(arrRecipes[i][1], title);
-                recipe = arrRecipes[i];
-                break;
-            }
-        }
-        console.log(recipe);
-        recipe_container.innerHTML = `<div><h2 class="title">${title}</h2>
+      }
+      console.log(recipe);
+      recipe_container.innerHTML = `<div><h2 class="title">${title}</h2>
         <img src="${recipe[4]}" alt="" class="recipe-img"></div>
         <div><h3 class="categ">${recipe[2]}</h3>
-        <p class="desc">${recipe[3]}</p></div>`
-        
+        <p class="desc">${recipe[3]}</p></div>`;
     </script>
-</body>
+  </body>
 </html>

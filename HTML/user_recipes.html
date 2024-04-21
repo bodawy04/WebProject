@@ -4,12 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes</title>
-    <link rel="stylesheet" href="../css/admin_recipes.css">
+    <link rel="stylesheet" href="../css/user_recipes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +43,8 @@
           <i class="fi fi-brands-youtube"></i>
           <i class="fi fi-brands-twitter"></i>
         </div>
-        <div class="login-reg">
-          <p>Login / Register</p>
+        <div class="displayName">
+          <p></p>
           <img src="../images/login-icon.png" alt="" />
         </div>
       </nav>
@@ -44,13 +52,23 @@
         <div class="logo-navbar">LOGO</div>
         <div class="links-navbar">
           <a class="navbar-link" href="homeUser.html">Home</a>
-          <a class="navbar-link" href="">Features</a>
-          <a class="navbar-link" href="user_recipes.html">Receipies</a>
-          <a class="navbar-link" href="">Reviews</a>
-          <a class="navbar-link" href="">Contact</a>
-        </div>
-        <div class="searchbox-navbar">
-          <img class="search-icon" src="../images/search-icon.png" alt="" />
+          <a class="navbar-link" href="features.html">Features</a>
+          <a class="navbar-link rcpLink">Receipies</a>
+          <div class="fav">
+            <a class="navbar-link">Favorites</a>
+            <ul>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+              <li>
+                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
+              </li>
+            </ul>
+          </div>
+          <a class="navbar-link" href="Contact page.html">Contact</a>
         </div>
       </nav>
     </nav>
@@ -58,21 +76,6 @@
       <h2>Recipe</h2>
     </div>
     <div class="filters">
-      <select class="category" name="" id="">
-        <option value="">All Recipies Categories</option>
-        <option value="">Pizza</option>
-        <option value="">Salads</option>
-        <option value="">Desserts</option>
-        <option value="">Side Dishes</option>
-      </select>
-      <select class="ingredients" name="" id="">
-        <option value="">All Ingredients</option>
-        <option value="">Eggs</option>
-        <option value="">Wheat</option>
-        <option value="">Oats</option>
-        <option value="">Milk</option>
-        <option value="">Cheese</option>
-      </select>
       <input
         type="Search Receipies"
         id="search"
@@ -86,16 +89,145 @@
     </div>
     <div class="recipeGrid">
       <h3 class="emptyRcps">There is nothing to show at the moment</h3>
-      
     </div>
-    <div class="preFooter">
-      <img src="../images/5.jpg.webp" alt="" srcset="" />
-      <img src="../images/6.jpg.webp" alt="" srcset="" />
-      <img src="../images/7.webp" alt="" srcset="" />
-      <img src="../images/8.jpg" alt="" srcset="" />
-      <img src="../images/9.jpg" alt="" srcset="" />
-      <img src="../images/6.jpg.webp" alt="" srcset="" />
+    <div class="photos-container" id="photos-container">
+      <div>
+        <img
+          class="photos-inside-container"
+          src="../images/footer1.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer2.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer3.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer4.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer5.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer6.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer7.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer8.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer9.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer10.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer11.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer12.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer13.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer14.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer15.jpg"
+          alt=""
+        />
+      </div>
     </div>
-    <script src="../js/user_recipe.js"></script>
+    <footer class="footer-container">
+      <div class="footer-logo-and-socialmedia-container">
+        <div class="footer-logo-container">
+          <img src="../images/logo.png.webp" alt="" />
+        </div>
+        <div class="footer-socialmedia-icons-container">
+          <i class="fi fi-brands-instagram footer-icons"></i>
+          <i class="fi fi-brands-facebook footer-icons"></i>
+          <i class="fi fi-brands-youtube footer-icons"></i>
+          <i class="fi fi-brands-twitter footer-icons"></i>
+        </div>
+      </div>
+      <div class="footer-links-and-copyrights-container">
+        <div class="footer-links-container">
+          <ul>
+            <li href="homeUser.html">Home</li>
+            <li href="features.html">Features</li>
+            <li href="user_recipes.html">Receipies</li>
+            <li href="Contact page.html">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let username = document.querySelector(".displayName p");
+      username.innerHTML = localStorage.getItem("username");
+
+      let logout = document.querySelector(".displayName img");
+      logout.addEventListener("click", () => {
+        localStorage.removeItem("username");
+        localStorage.removeItem("isAdmin");
+        location.href = "/html/index.html";
+      });
+
+      let favList = document.querySelector(".fav");
+      let rcpLink = document.querySelector(".rcpLink");
+      if (localStorage.getItem("isAdmin") == "true") {
+        favList.style.display = "none";
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "adminrecipes.html")
+        );
+      } else if (localStorage.getItem("isAdmin") == "false") {
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "user_recipes.html")
+        );
+      }
+      let photosContainer = document.getElementById("photos-container");
+
+      photosContainer.addEventListener("wheel", (amountOfScrolling) => {
+        amountOfScrolling.preventDefault();
+        photosContainer.scrollLeft -= amountOfScrolling.deltaY;
+      });
+    </script>
+    <script src="../javascript/user_recipe.js"></script>
   </body>
 </html>

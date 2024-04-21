@@ -42,7 +42,7 @@
         <div class="logo-navbar">LOGO</div>
         <div class="links-navbar">
           <a class="navbar-link" href="homeUser.html">Home</a>
-          <a class="navbar-link">Features</a>
+          <a class="navbar-link" href="features.html">Features</a>
           <a class="navbar-link rcpLink">Receipies</a>
           <div class="fav">
             <a class="navbar-link" href="">Favorites</a>
@@ -130,7 +130,6 @@
         </div> -->
         <div class="recipeGrid">
           <h3 class="emptyRcps">There is nothing to show at the moment</h3>
-          
         </div>
       </div>
       <div class="card c3">
@@ -156,8 +155,32 @@
         <h3>Feta Cheese Burgers</h3>
       </div>
     </section>
-    <script src="../js/homeUserr.js">
-      
+    <script>
+      let username = document.querySelector(".displayName p");
+      username.innerHTML = localStorage.getItem("username");
+
+      let logout = document.querySelector(".displayName img");
+      logout.addEventListener("click", () => {
+        localStorage.removeItem("username");
+        localStorage.removeItem("isAdmin");
+        location.href = "index.html";
+      });
+
+      let favList = document.querySelector(".fav");
+      let rcpLink = document.querySelector(".rcpLink");
+      if (localStorage.getItem("isAdmin") == "true") {
+        favList.style.display = "none";
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "adminrecipes.html")
+        );
+      } else if (localStorage.getItem("isAdmin") == "false") {
+        rcpLink.addEventListener(
+          "click",
+          () => (location.href = "user_recipes.html")
+        );
+      }
     </script>
+    <script src="../js/homeUserr.js"></script>
   </body>
 </html>

@@ -27,7 +27,7 @@
         type="email"
         placeholder="Enter your email"
         id="textfield"
-        class="password"
+        class="email"
       />
       <label for="password">Password</label>
       <input
@@ -48,14 +48,21 @@
       </div>
       <button type="submit" onclick="sumbit()">Register</button>
     </div>
-    
+
     <script>
       function sumbit() {
+        let email = document.querySelector(".email").value;
         let password = document.querySelector(".pass").value;
         let confPass = document.querySelector(".confPassword").value;
         let checkbox = document.querySelector("#checkbox").checked;
 
-        console.log(checkbox);
+        // console.log(checkbox);
+
+        function validEmail(e) {
+          let regex = new RegExp(/.{5,15}@(gmail|yahoo).(com|net)/i);
+          let result = regex.test(e);
+          return result;
+        }
 
         if (
           password.length > 1 &&
@@ -68,14 +75,17 @@
           alert("Password can't be empty");
         } else if (password !== confPass) {
           alert("Passwords doesn't match");
+        } else if (validEmail(email) == false) {
+          alert("Invalid Email");
         } else if (
           password === confPass &&
           password != "" &&
           password.length >= 8 &&
-          confPass.length >= 8
+          confPass.length >= 8 &&
+          validEmail(email) == true
         ) {
           save(checkbox);
-          window.location.href = "/html/homeUser.html";
+          window.location.href = "homeUser.html";
         }
       }
 
