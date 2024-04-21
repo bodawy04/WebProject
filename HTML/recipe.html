@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/recipe.css">
+    <!-- <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .GoBack{
+            color: #FDE4CE;
+            background-color: #D22701;
+            border: none;
+            text-decoration: none;
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border-radius: 10px;
+            font-size: medium;
+            transition: ease-in-out 0.2s;
+            z-index: 100;
+            cursor: pointer;
+        }
+        
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: #AAD15F;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .recipe-container{
+            width: 1800px;
+            height: 80vh;
+            background-color: #FEFEFE;
+            position: relative;
+            border-radius: 20px;
+        }
+        .recipe-img{
+            width: 900px;
+            height: 100%;
+            /* border: 5px solid #D22701; */
+            border-radius: 20px;
+            /* background: url(../images/1.jpg.webp); */
+            background-size: cover;
+            position: absolute;
+            right: 0;
+        }
+    </style> -->
+</head>
+<body>
+    <button class="GoBack" onclick="goToHomePage()">
+        Go to the home page
+    </button>
+    <div class="recipe-container">
+        <img src="" alt="" class="recipe-img">
+        <h2 class="title"></h2>
+        <p class="desc"></p>
+    </div>
+    <script>
+        function goToHomePage() {
+            document.location.href = "homeUser.html"
+        }
+        let recipe_container = document.querySelector(".recipe-container");
+        let title = localStorage.getItem("recipeTitle")
+        let arrRecipes = JSON.parse(localStorage.getItem("rcpData"));
+        let recipe;
+        for(let i = 0; i < arrRecipes.length; i++){
+            if(arrRecipes[i][1] == title){
+                console.log(arrRecipes[i][1], title);
+                recipe = arrRecipes[i];
+                break;
+            }
+        }
+        console.log(recipe);
+        recipe_container.innerHTML = `<div><h2 class="title">${title}</h2>
+        <img src="${recipe[4]}" alt="" class="recipe-img"></div>
+        <div><h3 class="categ">${recipe[2]}</h3>
+        <p class="desc">${recipe[3]}</p></div>`
+        
+    </script>
+</body>
+</html>
