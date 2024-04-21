@@ -1,20 +1,17 @@
 *{
+    padding: 0;
     margin: 0;
 }
-
-body {
-    background-color: #ffffff;
+body{
     font-family: "Poppins", sans-serif;
-    color: rgb(71, 71, 71);
-    margin: 0;
-  }
-  .navbar {
+}
+.navbar {
     font-family: "Dosis", sans-serif;
     font-weight: 600;
     font-size: 15px;
     position: sticky;
-  }
-  .nav1 {
+}
+.nav1 {
     height: 40px;
     display: flex;
     font-family: "Dosis", sans-serif;
@@ -23,24 +20,24 @@ body {
     padding: 10px 180px;
     color: #fff;
     background-color: rgb(255, 42, 107);
-  }
-  .login-reg img {
+}
+.login-reg img {
     width: 20px;
     height: 23px;
     margin-left: 10px;
     /* height: auto; */
     /* aspect-ratio: 1/1; */
     object-fit: contain;
-  }
-  .social-media-icons-nav {
+}
+.social-media-icons-nav {
     display: flex;
     gap: 20px;
-  }
-  .login-reg {
+}
+.login-reg {
     display: flex;
     align-items: center;
-  }
-  .nav2 {
+}
+.nav2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,27 +45,26 @@ body {
     font-weight: 600;
     font-size: 30px;
     height: 80px;
-  
     background-color: #ffffff;
-  }
-  .links-navbar {
+}
+.links-navbar {
     display: flex;
     justify-content: space-around;
     gap: 90px;
     font-size: 15px;
-  }
-  .nav2 img {
+}
+.nav2 img {
     width: 20px;
-  }
-  .navbar-link {
+}
+.navbar-link {
     text-decoration: none;
     font-family: "Dosis", sans-serif;
     color: rgb(71, 71, 71);
     transition: ease-in-out 300ms;
-  }
-  .navbar-link:hover {
+}
+.navbar-link:hover {
     color: rgb(255, 42, 107);
-  }
+}
 .under-navbar-container{
     min-height: 220px;
     width: 100%;
