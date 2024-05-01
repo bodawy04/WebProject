@@ -147,6 +147,28 @@ function addNewRecipe(r) {
   recipeGrid.appendChild(recipeTile);
 }
 
+let searchBtn = document.querySelector("#searchBtn");
+
+searchBtn.addEventListener("click", function () {
+  let searchQuery = document.querySelector("#search").value.toLowerCase();
+  let filteredRecipes = dataList.filter((recipe) => {
+    return recipe[1].toLowerCase().includes(searchQuery); // Search in recipe name
+  });
+
+  // Clear the recipe grid before displaying search results
+  recipeGrid.innerHTML = "";
+
+  // Display filtered recipes
+  if (filteredRecipes.length > 0) {
+    for (let i = 0; i < filteredRecipes.length; i++) {
+      addNewRecipe(filteredRecipes[i]);
+    }
+  } else {
+    // If no matching recipes found, display a message
+    recipeGrid.innerHTML = "<p>No matching recipes found.</p>";
+  }
+});
+
 let dataList = JSON.parse(localStorage.getItem("rcpData"));
 if (dataList != null && dataList.length > 0) {
   let empty = document.querySelector(".emptyRcps");

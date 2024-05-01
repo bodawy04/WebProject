@@ -49,55 +49,55 @@
       <button type="submit" onclick="sumbit()">Register</button>
     </div>
 
+    <script src="../javascript/register.js"></script>
     <script>
-      function sumbit() {
-        let email = document.querySelector(".email").value;
-        let password = document.querySelector(".pass").value;
-        let confPass = document.querySelector(".confPassword").value;
-        let checkbox = document.querySelector("#checkbox").checked;
+      // function sumbit() {
+      //   let email = document.querySelector(".email").value;
+      //   let password = document.querySelector(".pass").value;
+      //   let confPass = document.querySelector(".confPassword").value;
+      //   let checkbox = document.querySelector("#checkbox").checked;
 
-        // console.log(checkbox);
+      //   // console.log(checkbox);
 
-        function validEmail(e) {
-          let regex = new RegExp(/.{5,15}@(gmail|yahoo).(com|net)/i);
-          let result = regex.test(e);
-          return result;
-        }
+      //   function validEmail(e) {
+      //     let regex = new RegExp(/.{5,15}@(gmail|yahoo).(com|net)/i);
+      //     let result = regex.test(e);
+      //     return result;
+      //   }
 
-        if (
-          password.length > 1 &&
-          password.length < 8 &&
-          confPass.length > 1 &&
-          confPass.length < 8
-        ) {
-          alert("Password can't be less than 8 characters");
-        } else if (password == "") {
-          alert("Password can't be empty");
-        } else if (password !== confPass) {
-          alert("Passwords doesn't match");
-        } else if (validEmail(email) == false) {
-          alert("Invalid Email");
-        } else if (
-          password === confPass &&
-          password != "" &&
-          password.length >= 8 &&
-          confPass.length >= 8 &&
-          validEmail(email) == true
-        ) {
-          save(checkbox);
-          window.location.href = "homeUser.html";
-        }
-      }
+      //   if (
+      //     password.length > 1 &&
+      //     password.length < 8 &&
+      //     confPass.length > 1 &&
+      //     confPass.length < 8
+      //   ) {
+      //     alert("Password can't be less than 8 characters");
+      //   } else if (password == "") {
+      //     alert("Password can't be empty");
+      //   } else if (password !== confPass) {
+      //     alert("Passwords doesn't match");
+      //   } else if (validEmail(email) == false) {
+      //     alert("Invalid Email");
+      //   } else if (
+      //     password === confPass &&
+      //     password != "" &&
+      //     password.length >= 8 &&
+      //     confPass.length >= 8 &&
+      //     validEmail(email) == true
+      //   ) {
+      //     save(checkbox);
+      //     window.location.href = "homeUser.html";
+      //   }
+      // }
 
-      function save(c) {
-        let username = document.querySelector(".username").value;
-        window.localStorage.setItem("username", username);
-
-        if (c == true) window.localStorage.setItem("isAdmin", "true");
-        else if (c == false) {
-          window.localStorage.setItem("isAdmin", "false");
-        }
-      }
+      // function save(c) {
+      //   let username = document.querySelector(".username").value;
+      //   window.localStorage.setItem("username", username);
+      //   if (c == true) window.localStorage.setItem("isAdmin", "true");
+      //   else if (c == false) {
+      //     window.localStorage.setItem("isAdmin", "false");
+      //   }
+      // }
     </script>
   </body>
 </html>

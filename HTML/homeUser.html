@@ -46,17 +46,7 @@
           <a class="navbar-link rcpLink">Receipies</a>
           <div class="fav">
             <a class="navbar-link" href="">Favorites</a>
-            <ul>
-              <li>
-                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
-              </li>
-              <li>
-                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
-              </li>
-              <li>
-                pizza<i class="fa fa-trash-o" style="font-size: 12px"></i>
-              </li>
-            </ul>
+            <ul></ul>
           </div>
           <a class="navbar-link" href="">Contact</a>
         </div>
@@ -155,6 +145,112 @@
         <h3>Feta Cheese Burgers</h3>
       </div>
     </section>
+    <div class="photos-container" id="photos-container">
+      <div>
+        <img
+          class="photos-inside-container"
+          src="../images/footer1.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer2.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer3.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer4.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer5.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer6.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer7.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer8.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer9.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer10.webp"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer11.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer12.jpg"
+          alt=""
+        />
+
+        <img
+          class="photos-inside-container"
+          src="../images/footer13.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer14.jpg"
+          alt=""
+        />
+        <img
+          class="photos-inside-container"
+          src="../images/footer15.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <footer class="footer-container">
+      <div class="footer-logo-and-socialmedia-container">
+        <div class="footer-logo-container">
+          <img src="../images/logo.png.webp" alt="" />
+        </div>
+        <div class="footer-socialmedia-icons-container">
+          <i class="fi fi-brands-instagram footer-icons"></i>
+          <i class="fi fi-brands-facebook footer-icons"></i>
+          <i class="fi fi-brands-youtube footer-icons"></i>
+          <i class="fi fi-brands-twitter footer-icons"></i>
+        </div>
+      </div>
+      <div class="footer-links-and-copyrights-container">
+        <div class="footer-links-container">
+          <ul>
+            <li href="homeUser.html">Home</li>
+            <li href="features.html">Features</li>
+            <li href="user_recipes.html">Receipies</li>
+            <li href="Contact page.html">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <script>
       let username = document.querySelector(".displayName p");
       username.innerHTML = localStorage.getItem("username");
@@ -165,6 +261,48 @@
         localStorage.removeItem("isAdmin");
         location.href = "index.html";
       });
+
+      let fav = document.querySelector(".fav");
+      let isClicked = false;
+      fav.addEventListener("click", function () {
+        let favLi = document.querySelector(".fav ul");
+        if (!isClicked) {
+          favLi.style.display = "flex";
+          isClicked = true;
+        } else if (isClicked) {
+          favLi.style.display = "none";
+          isClicked = false;
+        }
+      });
+
+      function addToFav(r, i) {
+        let fav = document.querySelector(".fav ul");
+        let listItem = document.createElement("li");
+        listItem.innerHTML = r;
+        let trash = document.createElement("i");
+        trash.setAttribute("class", "fa fa-trash-o");
+        trash.setAttribute("style", "font-size: 12px");
+        listItem.appendChild(trash);
+        fav.appendChild(listItem);
+
+        // Add event listener for removing item from favorites
+        trash.addEventListener("click", function () {
+          let oldData = JSON.parse(localStorage.getItem("favRcp"));
+          oldData.splice(i, 1);
+          console.log("Clicked");
+          localStorage.setItem("favRcp", JSON.stringify(oldData));
+          // Optionally, update UI after removing item
+          listItem.remove(); // Remove the item from the UI
+          location.reload();
+        });
+      }
+
+      let favLi = JSON.parse(localStorage.getItem("favRcp"));
+      if (favLi != null && favLi.length > 0) {
+        for (let i = 0; i < favLi.length; i++) {
+          addToFav(favLi[i], i);
+        }
+      }
 
       let favList = document.querySelector(".fav");
       let rcpLink = document.querySelector(".rcpLink");
@@ -180,6 +318,12 @@
           () => (location.href = "user_recipes.html")
         );
       }
+      let photosContainer = document.getElementById("photos-container");
+
+      photosContainer.addEventListener("wheel", (amountOfScrolling) => {
+        amountOfScrolling.preventDefault();
+        photosContainer.scrollLeft -= amountOfScrolling.deltaY;
+      });
     </script>
     <script src="../js/homeUserr.js"></script>
   </body>

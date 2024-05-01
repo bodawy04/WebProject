@@ -1,48 +1,58 @@
+if (localStorage.getItem("accounts") == null) {
+  window.localStorage.setItem("accounts", "[]");
+}
+
 function sumbit() {
-    let password = document.querySelector(".pass").value;
-    let confPass = document.querySelector(".confPassword").value;
-    let checkbox = document.querySelector("#checkbox").checked;
-    let email = document.querySelector("#email").value;
+  let username = document.querySelector(".username").value;
+  let email = document.querySelector(".email").value;
+  let password = document.querySelector(".pass").value;
+  let confPass = document.querySelector(".confPassword").value;
+  let checkbox = document.querySelector("#checkbox").checked;
 
-    console.log(checkbox);
+  // console.log(checkbox);
 
-    if (
+  function validEmail(e) {
+    let regex = new RegExp(/.{5,15}@(gmail|yahoo).(com|net)/i);
+    let result = regex.test(e);
+    return result;
+  }
+
+  if (
     password.length > 1 &&
     password.length < 8 &&
     confPass.length > 1 &&
     confPass.length < 8
-    ) {
+  ) {
     alert("Password can't be less than 8 characters");
-    } else if (password == "") {
+  } else if (password == "") {
     alert("Password can't be empty");
-    } else if (password !== confPass) {
+  } else if (password !== confPass) {
     alert("Passwords doesn't match");
-    } else if (
+  } else if (validEmail(email) == false) {
+    alert("Invalid Email");
+  } else if (
     password === confPass &&
     password != "" &&
     password.length >= 8 &&
-    confPass.length >= 8
-    ) {
-    save(checkbox);
-    }}
+    confPass.length >= 8 &&
+    validEmail(email) == true
+  ) {
+    save(username, email, password, checkbox);
+    window.location.href = "homeUser.html";
+  }
+}
 
-function save(c) {
-    let username = document.querySelector(".username").value;
-    window.localStorage.setItem("username", username);
-
-    let password = document.querySelector(".pass").value;
-    window.localStorage.setItem("password", password);
-    
-    let email = document.querySelector("#email").value;
-    window.localStorage.setItem("email", email);
-
-    if (c == true) {
+function save(u, email, pass, c) {
+  window.localStorage.setItem("username", u);
+  if (c == true) {
+    let accounts = JSON.parse(localStorage.getItem("accounts"));
+    accounts.push([u, email, pass, "true"]);
+    localStorage.setItem("accounts", JSON.stringify(accounts));
     window.localStorage.setItem("isAdmin", "true");
-    window.localStorage.setItem("isVerified", "false");
-    window.location.href = "/html/index.html";
-    }
-    else if (c == false) {
+  } else if (c == false) {
+    let accounts = JSON.parse(localStorage.getItem("accounts"));
+    accounts.push([u, email, pass, "false"]);
+    localStorage.setItem("accounts", JSON.stringify(accounts));
     window.localStorage.setItem("isAdmin", "false");
-    window.localStorage.setItem("isVerified", "false");
-    window.location.href = "/html/index.html";
-    }}
+  }
+}

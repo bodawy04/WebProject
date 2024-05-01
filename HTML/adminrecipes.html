@@ -74,11 +74,7 @@
         <h2>Recipe</h2>
       </div>
       <div class="filters">
-        <input
-          type="Search Receipies"
-          id="search"
-          placeholder="Search Receipies"
-        />
+        <input type="text" id="search" placeholder="Search Receipies" />
         <button id="searchBtn">Search</button>
       </div>
       <div class="latestTitle">
@@ -152,7 +148,7 @@
               <h4 class="delete">Delete</h4>
             </div>
           </div>
-          <img alt="" class="itemImg" srcset="" src="../images/1.jpg.webp" />
+          <img alt="" class="itemImg" srcset="" />
         </div>
       </section>
       <div class="edit">
@@ -274,7 +270,7 @@
       logout.addEventListener("click", () => {
         localStorage.removeItem("username");
         localStorage.removeItem("isAdmin");
-        location.href = "/html/index.html";
+        location.href = "index.html";
       });
 
       let favList = document.querySelector(".fav");

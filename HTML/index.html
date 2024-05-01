@@ -16,17 +16,27 @@
     <div class="login">
       <h1>Recipe Finder</h1>
       <label for="email">Email</label>
-      <input type="email" id="textfield" placeholder="Enter your email" />
+      <input
+        type="email"
+        id="textfield"
+        class="email"
+        placeholder="Enter your email"
+      />
       <label for="password">Password</label>
-      <input type="password" id="textfield" placeholder="Enter your password" />
+      <input
+        type="password"
+        id="textfield"
+        class="password"
+        placeholder="Enter your password"
+      />
       <div class="isAdmin">
         <input type="checkbox" id="checkbox" value="isAdmin" />Admin
       </div>
       <h4>Don't have an account? <a href="register.html">Register</a></h4>
-      <form action="/html/homeUser.html">
-        <button type="submit">Log in</button>
-      </form>
+
+      <button type="submit" id="loginBtn">Log in</button>
     </div>
     <div></div>
   </body>
+  <script src="../javascript/index.js"></script>
 </html>
